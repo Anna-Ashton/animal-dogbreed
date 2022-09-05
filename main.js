@@ -3,6 +3,7 @@ let deleteFirstPicDelay
 document.getElementById("myBtn").addEventListener("click", displayDate);
 document.getElementById("myPal").addEventListener("mouseover", text);
 let submitExample=document.getElementById("submitExample");
+const commentsList = document.getElementById('list');
 //function fetches the data
 async function power() {
     try {
@@ -82,6 +83,10 @@ function createSlideShow(images) {
 
   submitExample.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    let comment = document.getElementById('subject').value;
+     commentsList.innerHTML  += `<p>${comment}</p>`;
+     submitExample.reset();
   })
 
   function text() {
